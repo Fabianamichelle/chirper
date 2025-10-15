@@ -24,9 +24,10 @@
         </div>
     </nav>
 
-    <main class="flex-1 container mx-auto px-4 py-8">
-        {{ $slot }}
+    <main class="flex-1 w-screen flex justify-center items-start py-8" style="width:100vw;margin:0;padding:0;display:flex;justify-content:center;align-items:flex-start;">
+    {{ $slot }}
     </main>
+ 
 
     <footer class="footer footer-center p-5 bg-base-300 text-base-content text-xs">
         <div>

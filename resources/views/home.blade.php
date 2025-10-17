@@ -39,7 +39,7 @@
         </div>
     </div>
         <!-- Feed -->
-        <div class="space-y-4 mt-8">
+        <div class=" flex flex-col space-y-4 mt-8">
             @forelse ($chirps as $chirp)
                 <x-chirp :chirp="$chirp" />
             @empty

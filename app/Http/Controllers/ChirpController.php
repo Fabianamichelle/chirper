@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Chirp;
+use App\Http\Controllers\ChirpController;
 
 class ChirpController extends Controller
 {
@@ -32,23 +33,23 @@ class ChirpController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    
+    
     public function store(Request $request)
     {
-        // validate input
-        $data = $request->validate([
+        $validated = $request->validate([
             'message' => 'required|string|max:255',
+        ], [
+            'message.required' => 'Please write something to chirp!',
+            'message.max' => 'Chirps must be 255 characters or less.',
         ]);
 
-        // ensure a user is present (if using auth middleware this should always be true)
-        $user = $request->user();
-        if (! $user) {
-            return redirect()->route('login');
-        }
+        \App\Models\Chirp::create([
+            'message' => $validated['message'],
+            'user_id' => null,
+        ]);
 
-        // create via the relation; make sure App\Models\Chirp has 'message' in $fillable
-        $chirp = $user->chirps()->create($data);
-
-        return redirect()->back()->with('success', 'Chirp posted.');
+        return redirect('/')->with('success', 'Your chirp has been posted!');
     }
 
     /**

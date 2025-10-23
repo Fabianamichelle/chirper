@@ -3,7 +3,8 @@
 This repository follows the **"Laravel Learn: Chirper"** tutorial. A hands-on introduction to the Laravel framework. The project walks through the fundamentals of modern Laravel development using **Blade**, **Eloquent**, **Jetstream**, and **Tailwind CSS** to build a simple microblogging platform similar to Twitter.
 
 ---
-
+## Try it out here -> https://chirper-main-idz6jw.laravel.cloud/
+![Demo](https://github.com/Fabianamichelle/chirper/blob/main/public/demo/ezgif.com-optimize%20copy.gif)
 ## 🚀 Project Overview
 
 **Chirper** lets users:

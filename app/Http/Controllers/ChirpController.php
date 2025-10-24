@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Chirp;
 use App\Http\Controllers\ChirpController;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class ChirpController extends Controller
 { 
@@ -56,7 +57,9 @@ class ChirpController extends Controller
     {
         //
     }
-
+    
+    use AuthorizesRequests;
+    
     
     public function edit(Chirp $chirp)
     {
